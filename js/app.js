@@ -1,3 +1,4 @@
+// === Step 0: utilities ===
 const periodPrefix = {
   daily: 'Yesterday',
   weekly: 'Last Week',
@@ -8,9 +9,10 @@ function formatHours(n) {
   return n + (n === 1 ? 'hr' : 'hrs');
 }
 
+// === Step 1: fetch data.json ===
 let activitiesData = [];
 
-fetch('assets/data.json')
+fetch('./assets/data.json')
   .then(res => {
     if (!res.ok) throw new Error('Network response was not ok');
     return res.json();
@@ -20,25 +22,26 @@ fetch('assets/data.json')
     initUI();
   })
   .catch(err => {
-    console.error('Error loading data.json:', err);
+    console.error('Erreur chargement data.json:', err);
   });
 
-
+// === Step 2: UI initialization ===
 function initUI() {
   const dashboard = document.querySelector('.dashboard');
-
-  // Frontend Mentor
-  if (window.location.hostname.includes('frontendmentor')) {
-    dashboard.classList.add('js-no-animation');
-  }
-  
   const buttons = document.querySelectorAll('.user-profile__switcher [data-period]');
   const cards = document.querySelectorAll('.activity');
 
-  if (cards.length !== activitiesData.length) {
-    console.warn('The number of cards does not match the number of entries in data.json');
+  if (!dashboard) return;
+
+  // === (1) Frontend Mentor Mode Management
+  const isFEM = window.location.hostname.includes('frontendmentor');
+
+  if (isFEM) {
+    dashboard.classList.add('js-no-animation');
+    console.log('Frontend Mentor mode: animations et drag désactivés.');
   }
 
+  // === (2) Update function
   function updateDashboard(period) {
     activitiesData.forEach(activity => {
       const selector = `.activity[data-title="${CSS.escape(activity.title)}"]`;
@@ -49,35 +52,53 @@ function initUI() {
       const prevEl = card.querySelector('.activity__summary--previous');
       const timeframe = activity.timeframes[period];
 
-      if (hoursEl) {
-        hoursEl.classList.add('change');
-        setTimeout(() => {
-          hoursEl.textContent = formatHours(timeframe.current);
-          hoursEl.classList.remove('change');
-        }, 150);
-      }
+      if (!timeframe) return;
 
-      if (prevEl) {
-        prevEl.classList.add('change');
+      // Gentle animation on numbers (CSS already prepared)
+      [hoursEl, prevEl].forEach(el => {
+        el.classList.add('change');
         setTimeout(() => {
-          prevEl.textContent = `${periodPrefix[period]} - ${formatHours(timeframe.previous)}`;
-          prevEl.classList.remove('change');
+          if (el === hoursEl) {
+            el.textContent = formatHours(timeframe.current);
+          } else {
+            el.textContent = `${periodPrefix[period]} - ${formatHours(timeframe.previous)}`;
+          }
+          el.classList.remove('change');
         }, 150);
-      }
+      });
     });
   }
 
+  // === (3) Initial state ===
   updateDashboard('weekly');
+  buttons.forEach(btn => {
+    btn.setAttribute('aria-pressed', btn.dataset.period === 'weekly' ? 'true' : 'false');
+    btn.classList.toggle('user-profile__switch--active', btn.dataset.period === 'weekly');
+  });
 
+  // === (4) Listeners buttons ===
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       const period = btn.dataset.period;
-      buttons.forEach(b => b.setAttribute('aria-pressed', 'false'));
+      buttons.forEach(b => {
+        b.setAttribute('aria-pressed', 'false');
+        b.classList.remove('user-profile__switch--active');
+      });
       btn.setAttribute('aria-pressed', 'true');
-      buttons.forEach(b => b.classList.remove('user-profile__switch--active'));
       btn.classList.add('user-profile__switch--active');
-
       updateDashboard(period);
     });
   });
+
+  // === (5) Drag & Drop with Sortable.js (disabled on FEM) ===
+  if (!isFEM && typeof Sortable !== 'undefined') {
+    Sortable.create(dashboard, {
+      animation: 150,
+      ghostClass: 'sortable-ghost',
+      chosenClass: 'sortable-chosen',
+      dragClass: 'sortable-drag'
+    });
+  } else if (!isFEM) {
+    console.warn('⚠️ Sortable.js not found — Check the script link');
+  }
 }

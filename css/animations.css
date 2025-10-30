@@ -44,14 +44,6 @@
   --i: 10.5;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .dashboard > * {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-  }
-}
-
 /* Frontend Mentor  */
 .dashboard.js-no-animation > * {
   opacity: 1 !important;
@@ -102,4 +94,12 @@
   40%  { transform: rotate(4deg) scale(0.88); }
   65%  { transform: rotate(2deg) scale(0.93); }
   100% { transform: rotate(4deg) scale(0.9); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard > * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
 }
