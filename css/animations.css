@@ -44,6 +44,14 @@
   --i: 10.5;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .dashboard > * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
 /* Frontend Mentor  */
 .dashboard.js-no-animation > * {
   opacity: 1 !important;
