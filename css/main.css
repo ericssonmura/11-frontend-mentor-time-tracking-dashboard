@@ -197,34 +197,34 @@ button {
 
 .activity--work::before {
   background-color: var(--orange-300);
-  background-image: url('./assets/images/icon-work.svg');
+  background-image: url('../assets/images/icon-work.svg');
 }
 
 .activity--play::before {
   background-color: var(--blue-300);
-  background-image: url('./assets/images/icon-play.svg');
+  background-image: url('../assets/images/icon-play.svg');
 }
 
 .activity--study::before {
   background-color: var(--pink-400);
-  background-image: url('./assets/images/icon-study.svg');
+  background-image: url('../assets/images/icon-study.svg');
 }
 
 .activity--exercise::before {
   background-position: right 1rem top -0.05rem;
   background-color: var(--green-400);
-  background-image: url('./assets/images/icon-exercise.svg');
+  background-image: url('../assets/images/icon-exercise.svg');
 }
 
 .activity--social::before {
   background-position: right 1rem top -0.9rem;
   background-color: var(--purple-700);
-  background-image: url('./assets/images/icon-social.svg');
+  background-image: url('../assets/images/icon-social.svg');
 }
 
 .activity--selfcare::before {
   background-color: var(--yellow-300);
-  background-image: url('./assets/images/icon-self-care.svg');
+  background-image: url('../assets/images/icon-self-care.svg');
 }
 
 .activity__content {
