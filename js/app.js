@@ -10,7 +10,7 @@ function formatHours(n) {
 
 let activitiesData = [];
 
-fetch('./assets/data.json')
+fetch('assets/data.json')
   .then(res => {
     if (!res.ok) throw new Error('Network response was not ok');
     return res.json();
