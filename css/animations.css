@@ -1,4 +1,4 @@
-.dashboard > *:not([data-animated]) {
+/* .dashboard > *:not([data-animated]) {
   opacity: 0;
   will-change: opacity, transform;
   backface-visibility: hidden;
@@ -42,7 +42,7 @@
 
 .dashboard>*:nth-child(8) {
   --i: 10.5;
-}
+} */
 
 /* Frontend Mentor  */
 .dashboard.js-no-animation > * {
@@ -63,7 +63,7 @@
 }
 
 
-/* Fade-in */
+/* Fade-in 
 @-webkit-keyframes fade-in {
   0% {
     opacity: 0;
@@ -87,6 +87,7 @@
     transform: translateY(0);
   }
 }
+*/
 
 /* Bounce-back */
 @keyframes bounce-back {
