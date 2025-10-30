@@ -1,0 +1,90 @@
+.dashboard > *:not([data-animated]) {
+  opacity: 0;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  animation: fade-in 0.35s ease-in-out forwards;
+  animation-delay: calc(0.08s * var(--i, 0));
+}
+
+.dashboard > *:nth-child(n) {
+  -webkit-animation-delay: calc(0.08s * var(--i, 0));
+  animation-delay: calc(0.08s * var(--i, 0));
+}
+
+.dashboard>*:nth-child(1) {
+  --i: 0;
+}
+
+.dashboard>*:nth-child(2) {
+  --i: 1.5;
+}
+
+.dashboard>*:nth-child(3) {
+  --i: 3;
+}
+
+.dashboard>*:nth-child(4) {
+  --i: 4.5;
+}
+
+.dashboard>*:nth-child(5) {
+  --i: 6;
+}
+
+.dashboard>*:nth-child(6) {
+  --i: 7.5;
+}
+
+.dashboard>*:nth-child(7) {
+  --i: 9;
+}
+
+.dashboard>*:nth-child(8) {
+  --i: 10.5;
+}
+
+.sortable-ghost {
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
+}
+
+.sortable-chosen,
+.sortable-drag {
+  cursor: grabbing;
+  z-index: 999;
+}
+
+
+/* Fade-in */
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bounce-back */
+@keyframes bounce-back {
+  0%   { transform: rotate(0deg) scale(1); }
+  40%  { transform: rotate(4deg) scale(0.88); }
+  65%  { transform: rotate(2deg) scale(0.93); }
+  100% { transform: rotate(4deg) scale(0.9); }
+}

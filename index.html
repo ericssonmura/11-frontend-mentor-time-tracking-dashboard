@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.16.0/Sortable.min.js" defer></script>
+  <script src="./js/sortable.js" defer></script>
+  <script src="./js/main.js" defer></script>
+  <script src="./js/app.js" defer></script>
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+</head>
+
+<body>
+  <div class="ttd-container">
+
+    <main id="card-sortable" class="dashboard js-dashboard-container">
+
+      <section class="user-profile non-draggable">
+        <header class="user-profile__header">
+          <img class="user-profile__img" src="assets/images/image-jeremy.png" height="234" width="234"
+            alt="picture of Jeremy Robson">
+          <div class="user-profile__info">
+            <h1 class="user-profile__title">
+              <span class="user-profile__label">Report for</span>
+              <span class="user-profile__name">Jeremy Robson</span>
+            </h1>
+          </div>
+        </header>
+        <div class="user-profile__switcher">
+          <button class="user-profile__switch daily" data-period="daily" aria-pressed="false">Daily</button>
+          <button class="user-profile__switch weekly user-profile__switch--active" data-period="weekly" aria-pressed="true">Weekly</button>
+          <button class="user-profile__switch monthly" data-period="monthly" aria-pressed="false">Monthly</button>
+        </div>
+      </section>
+
+      <article class="activity activity--work" data-title="Work">
+        <div class="activity__content drag-handle">
+          <div class="activity__title">
+            <h2>Work</h2>
+            <img src="assets/images/icon-ellipsis.svg" class="drag-handle" alt="">
+          </div>
+          <div class="activity__summary">
+            <p class="activity__summary--hours">32hrs</p>
+            <p class="activity__summary--previous">Last Week - 36hrs</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="activity activity--play" data-title="Play">
+        <div class="activity__content drag-handle">
+          <div class="activity__title">
+            <h2>Play</h2>
+            <img src="assets/images/icon-ellipsis.svg" alt="">
+          </div>
+          <div class="activity__summary">
+            <p class="activity__summary--hours">10hrs</p>
+            <p class="activity__summary--previous">Last Week - 8hrs</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="activity activity--study" data-title="Study">
+        <div class="activity__content drag-handle">
+          <div class="activity__title">
+            <h2>Study</h2>
+            <img src="assets/images/icon-ellipsis.svg" class="drag-handle" alt="">
+          </div>
+          <div class="activity__summary">
+            <p class="activity__summary--hours">4hrs</p>
+            <p class="activity__summary--previous">Last Week - 7hrs</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="activity activity--exercise" data-title="Exercise">
+        <div class="activity__content drag-handle">
+          <div class="activity__title">
+            <h2>Exercise</h2>
+            <img src="assets/images/icon-ellipsis.svg" class="drag-handle" alt="">
+          </div>
+          <div class="activity__summary">
+            <p class="activity__summary--hours">4hrs</p>
+            <p class="activity__summary--previous">Last Week - 5hrs</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="activity activity--social" data-title="Social">
+        <div class="activity__content drag-handle">
+          <div class="activity__title">
+            <h2>Social</h2>
+            <img src="assets/images/icon-ellipsis.svg" class="drag-handle" alt="">
+          </div>
+          <div class="activity__summary">
+            <p class="activity__summary--hours">5hrs</p>
+            <p class="activity__summary--previous">Last Week - 10hrs</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="activity activity--selfcare" data-title="Self Care">
+        <div class="activity__content drag-handle">
+          <div class="activity__title">
+            <h2>Self Care</h2>
+            <img src="assets/images/icon-ellipsis.svg" class="drag-handle" alt="">
+          </div>
+          <div class="activity__summary">
+            <p class="activity__summary--hours">2hrs</p>
+            <p class="activity__summary--previous">Last Week - 2hrs</p>
+          </div>
+        </div>
+      </article>
+
+    </main>
+  </div>
+
+</body>
+</html>
