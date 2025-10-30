@@ -25,6 +25,13 @@ fetch('assets/data.json')
 
 
 function initUI() {
+  const dashboard = document.querySelector('.dashboard');
+
+  // Frontend Mentor
+  if (window.location.hostname.includes('frontendmentor')) {
+    dashboard.classList.add('js-no-animation');
+  }
+  
   const buttons = document.querySelectorAll('.user-profile__switcher [data-period]');
   const cards = document.querySelectorAll('.activity');
 
@@ -69,6 +76,7 @@ function initUI() {
       btn.setAttribute('aria-pressed', 'true');
       buttons.forEach(b => b.classList.remove('user-profile__switch--active'));
       btn.classList.add('user-profile__switch--active');
+
       updateDashboard(period);
     });
   });

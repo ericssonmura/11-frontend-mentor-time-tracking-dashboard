@@ -44,6 +44,13 @@
   --i: 10.5;
 }
 
+/* Frontend Mentor  */
+.dashboard.js-no-animation > * {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  animation: none !important;
+}
+
 .sortable-ghost {
   opacity: 0.3;
   transition: opacity 0.2s ease;
