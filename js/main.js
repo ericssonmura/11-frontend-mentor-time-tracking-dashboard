@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       animation: 0,
       filter: '.non-draggable',
       onMove(evt) {
-      
+
         if (evt.related.classList.contains('non-draggable')) return false;
       },
       ghostClass: 'sortable-ghost',
@@ -29,4 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
       el.setAttribute('data-animated', 'true');
     });
   });
+
+  // --- trigger dashboard animation after DOM ready (FrontEnd Mentor screenshot stays static)
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setTimeout(() => {
+      document.querySelector('.dashboard')?.classList.add('animate');
+    }, 50); // très court délai
+  }
 });
+

@@ -452,7 +452,7 @@ button {
 
 /* ANIMATIONS */
 
-.dashboard > *:not([data-animated]) {
+/* .dashboard > *:not([data-animated]) {
   opacity: 0;
   will-change: opacity, transform;
   backface-visibility: hidden;
@@ -463,6 +463,20 @@ button {
 
 .dashboard > *:nth-child(n) {
   -webkit-animation-delay: calc(0.08s * var(--i, 0));
+  animation-delay: calc(0.08s * var(--i, 0));
+} */
+
+/* --- DEFAULT: visible for screenshots --- */
+.dashboard > * {
+  opacity: 1;
+  transform: none;
+  will-change: opacity, transform;
+}
+
+/* --- ANIMATION ONLY WHEN .animate IS ADDED --- */
+.dashboard.animate > * {
+  opacity: 0;
+  animation: fade-in 0.35s ease-in-out forwards;
   animation-delay: calc(0.08s * var(--i, 0));
 }
 
