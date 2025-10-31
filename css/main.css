@@ -529,19 +529,6 @@ button {
 }
 */
 
-/* html.js-no-fade-in .dashboard > * {
-  opacity: 1 !important;
-  transform: none !important;
-  animation: none !important;
-}
-
-html.js-no-fade-in *,
-html.js-no-fade-in *::before,
-html.js-no-fade-in *::after {
-  transition: none !important;
-}
-
-
 .sortable-ghost {
   opacity: 0.3;
   transition: opacity 0.2s ease;
@@ -551,7 +538,7 @@ html.js-no-fade-in *::after {
 .sortable-drag {
   cursor: grabbing;
   z-index: 999;
-} */
+}
 
 /* Fade-in */
 @-webkit-keyframes fade-in {
@@ -593,7 +580,7 @@ html.js-no-fade-in *::after {
     animation: none !important;
   }
 
-  /* .sortable-ghost {
+  .sortable-ghost {
     transition: none !important;
-  } */
+  }
 }
