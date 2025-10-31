@@ -1,7 +1,19 @@
-// if (window.location.hostname.includes('frontendmentor') || window.location.hostname.includes('127.0.0.1')) {
-//   document.documentElement.classList.add('no-animations');
-//   console.log('no-animations activé (test)');
-// }
+if (window.location.hostname.includes('frontendmentor')) {
+  const firstVisit = sessionStorage.getItem('fm-first-visit');
+
+  if (!firstVisit) {
+    // Première visite → désactivation temporaire
+    document.documentElement.classList.add('js-no-fade-in');
+    sessionStorage.setItem('fm-first-visit', 'true');
+
+    // Réactiver l'animation après un petit délai pour laisser le temps au screenshot
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.documentElement.classList.remove('js-no-fade-in');
+      }, 50); // très court, juste après le load
+    });
+  }
+}
 
 // --- Sortable JS for the card layout ---
 document.addEventListener('DOMContentLoaded', () => {
