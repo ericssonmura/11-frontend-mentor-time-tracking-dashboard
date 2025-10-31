@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // const dashboardItems = document.querySelectorAll('.dashboard > *');
-  // dashboardItems.forEach((el, index) => {
-  //   el.style.setProperty('--i', index * 1.5);
-  //   el.addEventListener('animationend', () => {
-  //     el.setAttribute('data-animated', 'true');
-  //   });
-  // });
+  const dashboardItems = document.querySelectorAll('.dashboard > *');
+  dashboardItems.forEach((el, index) => {
+    el.style.setProperty('--i', index * 1.5);
+    el.addEventListener('animationend', () => {
+      el.setAttribute('data-animated', 'true');
+    });
+  });
 });
 
 

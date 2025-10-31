@@ -452,23 +452,24 @@ button {
 
 /* ANIMATIONS */
 
-.dashboard > * {
+/* .dashboard > * {
   opacity: 0;
   transform: translateY(2rem);
+   -webkit-animation: fade-in .3s ease-in-out forwards;
   animation: fade-in 0.3s ease-in-out forwards;
   will-change: opacity, transform;
   backface-visibility: hidden;
   transform: translateZ(0);
 }
 
-.dashboard > *:nth-child(1) { animation-delay: 0s; }
-.dashboard > *:nth-child(2) { animation-delay: 0.1s; }
-.dashboard > *:nth-child(3) { animation-delay: 0.2s; }
-.dashboard > *:nth-child(4) { animation-delay: 0.3s; }
-.dashboard > *:nth-child(5) { animation-delay: 0.4s; }
-.dashboard > *:nth-child(6) { animation-delay: 0.5s; }
-.dashboard > *:nth-child(7) { animation-delay: 0.6s; }
-.dashboard > *:nth-child(8) { animation-delay: 0.7s; }
+.dashboard > *:nth-child(1) { -webkit-animation-delay: 0s; animation-delay: 0s; }
+.dashboard > *:nth-child(2) { -webkit-animation-delay: 0.1s; animation-delay: 0.1s; }
+.dashboard > *:nth-child(3) { -webkit-animation-delay: 0.2s; animation-delay: 0.2s; }
+.dashboard > *:nth-child(4) { -webkit-animation-delay: 0.3s; animation-delay: 0.3s; }
+.dashboard > *:nth-child(5) { -webkit-animation-delay: 0.4s; animation-delay: 0.4s; }
+.dashboard > *:nth-child(6) { -webkit-animation-delay: 0.5s; animation-delay: 0.5s; }
+.dashboard > *:nth-child(7) { -webkit-animation-delay: 0.6s; animation-delay: 0.6s; }
+.dashboard > *:nth-child(8) { -webkit-animation-delay: 0.7s; animation-delay: 0.7s; }
 
 @keyframes fade-in {
   0% {
@@ -479,9 +480,8 @@ button {
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
 
-/*
 .dashboard > *:not([data-animated]) {
   opacity: 0;
   will-change: opacity, transform;
@@ -527,7 +527,7 @@ button {
 .dashboard>*:nth-child(8) {
   --i: 10.5;
 }
-*/
+
 
 .sortable-ghost {
   opacity: 0.3;
