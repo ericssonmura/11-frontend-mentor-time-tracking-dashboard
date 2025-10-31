@@ -451,6 +451,19 @@ button {
 
 
 /* ANIMATIONS */
+
+html.no-animations .dashboard > * {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+html.no-animations *,
+html.no-animations *::before,
+html.no-animations *::after {
+  transition: none !important;
+}
+
 .dashboard > *:not([data-animated]) {
   opacity: 0;
   will-change: opacity, transform;

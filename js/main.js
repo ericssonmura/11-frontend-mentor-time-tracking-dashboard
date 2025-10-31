@@ -1,3 +1,7 @@
+if (window.location.hostname.includes('frontendmentor')) {
+  document.documentElement.classList.add('no-animations');
+}
+
 // --- Sortable JS for the card layout ---
 document.addEventListener('DOMContentLoaded', () => {
   const cardSortableElement = document.getElementById('card-sortable');
