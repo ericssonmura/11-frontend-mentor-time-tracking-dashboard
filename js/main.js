@@ -24,26 +24,28 @@ if (window.location.hostname.includes('frontendmentor')) {
 document.addEventListener('DOMContentLoaded', () => {
   const cardSortableElement = document.getElementById('card-sortable');
 
-  if (cardSortableElement) {
     new Sortable(cardSortableElement, {
-      handle: '.drag-handle',
-      animation: 0,
-      filter: '.non-draggable',
-      onMove(evt) {
-      
-        if (evt.related.classList.contains('non-draggable')) return false;
-      },
+      handle: '.drag-handle',       // seules les poignées déclenchent le drag
+      filter: '.non-draggable',     // empêche certains éléments d’être draggables
+      animation: 150,               // animation fluide lors du drag
       ghostClass: 'sortable-ghost',
       chosenClass: 'sortable-chosen',
-      dragClass: 'sortable-drag'
-    });
-  }
+      dragClass: 'sortable-drag',
 
-  const dashboardItems = document.querySelectorAll('.dashboard > *');
-  dashboardItems.forEach((el, index) => {
-    el.style.setProperty('--i', index * 1.5);
-    el.addEventListener('animationend', () => {
-      el.setAttribute('data-animated', 'true');
+      onMove(evt) {
+        // Empêche de passer par-dessus les éléments non-draggables (ex: header)
+        if (evt.related && evt.related.closest('.non-draggable')) {
+          return false;
+        }
+        return true;
+      }
+    });
+
+    const dashboardItems = document.querySelectorAll('.dashboard > *');
+    dashboardItems.forEach((el, index) => {
+      el.style.setProperty('--i', index * 1.5);
+      el.addEventListener('animationend', () => {
+        el.setAttribute('data-animated', 'true');
+      });
     });
   });
-});
