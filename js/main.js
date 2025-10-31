@@ -1,5 +1,6 @@
-if (window.location.hostname.includes('frontendmentor')) {
+if (window.location.hostname.includes('frontendmentor') || window.location.hostname.includes('127.0.0.1')) {
   document.documentElement.classList.add('no-animations');
+  console.log('no-animations activé (test)');
 }
 
 // --- Sortable JS for the card layout ---
