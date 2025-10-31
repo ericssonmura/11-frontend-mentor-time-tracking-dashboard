@@ -498,7 +498,7 @@ button {
 .dashboard>*:nth-child(8) {
   --i: 10.5;
 }
-
+*/
 
 html.js-no-fade-in .dashboard > * {
   opacity: 1 !important;
@@ -511,7 +511,7 @@ html.js-no-fade-in *::before,
 html.js-no-fade-in *::after {
   transition: none !important;
 }
-*/
+
 
 .sortable-ghost {
   opacity: 0.3;
