@@ -41,6 +41,18 @@ function initUI() {
     console.log('Frontend Mentor mode: animations et drag désactivés.');
   }
 
+  // --- Animation au load sans gêner Frontend Mentor screenshot ---
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.documentElement.classList.remove('js-no-fade-in');
+      document.documentElement.classList.add('fade-reveal');
+
+      setTimeout(() => {
+        document.documentElement.classList.add('fade-reveal-done');
+      }, 600); // durée de ton animation fade-in
+    }, 50); // délai court pour le screenshot FM
+  });
+
   // === (2) Update function
   function updateDashboard(period) {
     activitiesData.forEach(activity => {
