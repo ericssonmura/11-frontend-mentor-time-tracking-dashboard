@@ -1,8 +1,3 @@
-const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.get('noanim') === '1') {
-  document.documentElement.classList.add('js-no-fade-in');
-}
-
 // --- Sortable JS for the card layout ---
 document.addEventListener('DOMContentLoaded', () => {
   const cardSortableElement = document.getElementById('card-sortable');
@@ -29,12 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
       el.setAttribute('data-animated', 'true');
     });
   });
-
-  // --- trigger dashboard animation after DOM ready (FrontEnd Mentor screenshot stays static)
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    setTimeout(() => {
-      document.querySelector('.dashboard')?.classList.add('animate');
-    }, 50); // très court délai
-  }
 });
+
 
