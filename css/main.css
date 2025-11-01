@@ -366,6 +366,12 @@ button {
     padding-inline: 7.5rem;
   }
 
+  .user-profile__switch:focus {
+    outline: 3px solid #005fcc; /* Clear blue outline on focus */
+    outline-offset: 2px;        /* Adds space so outline doesn’t overlap content */
+    /* background-color: #e0f0ff;  /* Optional: subtle background highlight */
+  }
+
   .activity {
     margin-block-start: 2.625rem;
   }
