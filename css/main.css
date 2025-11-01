@@ -387,8 +387,12 @@ button {
 
   .activity__summary--hours {
     margin-block: 0.5rem;
-    font-size: 3.5rem;
+    font-size: 3rem;
     line-height: 4.125rem;
+  }
+
+  .activity__summary--previous {
+    font-size: 0.9rem;
   }
 }
 
