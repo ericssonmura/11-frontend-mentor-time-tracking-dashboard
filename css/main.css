@@ -18,6 +18,7 @@
   --navy-800: hsl(235, 41%, 34%); /* card hover */
   --navy-900: hsl(235, 46%, 20%);
   --navy-950: hsl(226, 43%, 10%);
+  --shadow-color: hsla(0, 0%, 0%, 0.6);
 
   --spacing-100: 0.5rem;
   --spacing-150: 0.625rem;
@@ -49,7 +50,8 @@ body {
   background-color: var(--navy-950);
   color: white;
   font-family: var(--font-family-base);
-  font-size: 18px;
+  font-size: 1.125rem;
+  /* font-size: clamp(1rem, 2vw, 1.5rem); */
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -128,7 +130,7 @@ button {
   object-fit: cover;
   border-radius: 50%;
   outline: 3px solid var(--white);
-  box-shadow: 0 5px 6px hsla(0, 0%, 0%, 0.6);
+  box-shadow: 0 5px 6px var(--shadow-color);
   transition: transform var(--transition-base);
 }
 
